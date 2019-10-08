@@ -1,0 +1,195 @@
+/*author:huahua
+  time:2019/8/15
+  */
+*{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo; 
+	color:#000;
+	font-size:10px;
+ }
+
+
+ .big_item{
+ 	font-size:20px;
+ }
+
+
+ a{
+	text-decoration: none;
+    color:#ccc;
+ }
+
+/*最大的外边框*/
+ .OuterBoundingBox{
+	height:700px;
+	width:1400px;
+	position:relative;
+	margin:50px auto;
+	background:rgba(255,192,203,0.5);
+	color:red;
+ }
+
+  .logo_container{
+  	height:50px;
+  	width:1400px;
+  	background:rgba(0,0,0,1);
+  }
+ /*工具框的存放地*/
+  .ToolBoxBoundingBox{
+  	height:50px;
+  	width:1400px;
+  	padding:10px 10px;
+  	
+  }
+
+
+
+  /*中间层的存放地*/
+  .InnerBoundingBox{
+  	/*margin:0;*/
+  	height:550px;
+  	
+  }
+    /*标记矩形框id的边框*/
+    .BoundingIdMenLight{
+	  height:550px;
+	  position:relative;
+	  z-index:1;
+	  overflow-y:auto;
+    }
+        .BoundingIdMenLight .IdMenuItem{
+	        cursor:pointer;
+	        z-index:1;
+	        position:relative;
+	        padding-bottom:2px;
+        }
+        .IdMenuItem{
+	        font-size:13px;
+	        margin:5px 0px;
+	        padding:20px auto;
+	        /*background:red;*/
+	        text-align:center;
+        }
+        .current_li{
+        	background:rgba(255,192,203,0.9);
+        }
+
+    /*绘制矩形的区域*/
+    #container{
+	  position:relative;
+	  background:#fff;  
+
+	  height:550px;
+	  
+      z-index: 1;
+      
+	}   
+	    
+	    .SvgBox{
+
+	    	position:absolute;
+	    	width:1020px;
+	    	height:548px;
+	    	overflow:hidden;
+	    }
+	       .svg_container{
+	       		position:absolute;
+	       	}
+	       .svg_tool{
+	       	cursor:pointer;
+	       	z-index:2;
+	       	position:relative;
+
+	       }
+	            .Svg_bgp{
+	   	            position:relative;
+	   	 
+	   	            z-index:2;
+	   	            transform-origin:left top;
+	            }
+	            .rectangle{
+	            	stroke:rgb(0,139,69);
+	            	fill:rgba(0,139,69,0);
+	            	stroke-width:2;
+	            }
+	            .RectangleDraw{
+	            	cursor:crosshair;
+	            	
+	            }
+	            /*绘制完成时的矩形*/
+	            .Rectangle_path{
+                    fill:rgba(255,192,203,0);
+                    stroke:red;
+                }
+                /*绘制过程中的矩形*/
+                #drawing_path{
+                	fill:rgba(255,192,203,0.5);
+                    stroke:red;
+                    
+                }
+                .svg_drawing_path{
+                	cursor:pointer;
+                }
+                
+                rect{
+                	stroke:rgb(0,139,69);
+                	fill:rgba(0,139,69);
+                	stroke-width:1;
+                }
+
+    /*中间层最右侧区域*/
+    #MarkBoundingBox{
+	  position:relative;
+    }
+       /*单选框存放的区域*/
+       .RadioMark{
+	       width:56px;
+	       margin:0 10px 0;
+        }
+        /*转写框存在的区域*/
+        .form-control{
+	        margin:50px 0;
+        }
+
+
+  /*提交层的外边框*/
+  .SubmitTaskBox{
+  	height:50px;
+  	width:1200px;
+  	
+  }
+
+    .SubmitTask{
+	  height:30px;
+	  width:100px;
+      margin:10px auto;
+    }
+
+
+
+
+/*按钮的鼠标点击方式设置*/
+.button_style{
+	font-weight:bolder;
+	color:red;
+}
+
+.container_moveimg{
+	cursor:pointer;
+}
+
+.container_rectangle{
+	
+	cursor:crosshair;
+}
+
+.container_quadrilateral{
+	cursor:crosshair;
+}
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+<!-- 
+  author:huahua
+  time:2019/8/15
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>绘图工具</title>
+    <link rel="stylesheet" href="static/css/drawing.css">
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.css">
+   
+    <script src="static/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    <script src="static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+ 
+    
+  </head>
+  <body>
+
+    <div class="OuterBoundingBox">
+      <div class = "logo_container">
+        <image src="static/images/logo.png" class="logo" width = "100px" height ="50px">
+      </div>
+      <div class = "ToolBoxBoundingBox">
+       
+        <input class="btn btn-default" type="button" value="移动" id="MoveImg" name="toolsOption" checked="checked">
+        <input class="btn btn-default" type="button" value="绘制矩形" id="Rectangle" name="toolsOption">
+        <input class="btn btn-default" type="button" value="移动四边形" id="Quadrilateral" name="toolsOption">
+        <input class="btn btn-default" type="button" value="移动矩形" id="RectMove" name="toolsOption">
+        <input class="btn btn-default" type="button" value="帮助" id="Help" name="toolsOption">
+      </div>
+      <div class = "InnerBoundingBox">
+        <div class="col-md-1" id="BoundingBox">
+          <div class = "BoundingIdBox">
+          <ul class = "BoundingIdMenLight">
+            <!-- <li value = "123">123</li> -->
+          </ul>
+          </div>
+        </div>
+        <div class="col-md-9" id="container">
+            <div id="temp" style="border:1px solid gray;width:1px;height:1px;position:absolute;display:none;">
+              
+            </div>
+            <div class="image_canvas_container" >
+              <!-- <img src="static/images/bg.png" class="Svg_bgp" width="100%" height="100%"> -->
+              <div class="SvgBox">
+                <div class = "svg_container" >
+                  <svg class="svg_tool"  xmlns="http://www.w3.org/2000/svg " focusable="true" tabindex="-1">
+                    <image xlink:href="static/images/500.jpg" class="Svg_bgp">
+                    </image>
+                    <g class="svg_line_container">
+                      <line class="line_X" x1="0" y1="0" x2="0" y2="0" style = "stroke:rgb(0,139,69);stroke-width:1">
+                      </line>
+                      <line class="line_Y" x1="0" y1="0" x2="0" y2="0" style = "stroke:rgb(0,139,69);stroke-width:1">
+                      </line>
+                    </g>
+                    <g class="svg_drawing_path">
+                      <path id = "drawing_path" ></path>
+                    </g>
+                    <g class="svg_rect_container">
+                      
+                      <rect class="RectangleDraw" id="rect1" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect2" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect3" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect4" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect5" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect6" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect7" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      <rect class="RectangleDraw" id="rect8" x="0" y="0" height="5" width="5" >
+                      </rect>
+                      
+                    </g>
+
+                  </svg>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+        <div class="col-md-2" id="MarkBoundingBox">
+          <div class="SelectMark">
+            <p class="big_item">选择标签</p>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark1" name="Mark"  value = "1" checked="true"> 横式
+            </label>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark2" name="Mark" value = "2" > 竖式
+            </label>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark3" name="Mark" value = "3"> 脱式
+            </label>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark4" name="Mark" value = "4"> 解方程
+            </label>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark5" name="Mark" value = "5"> 解题过程
+            
+            </label>
+            <label class="RadioMark">
+              <input type="radio"  class="radio_mark" id="Mark6" name="Mark" value = "6"> 不确定
+            </label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+          <div class="drawing_help">
+            <p class="big_item">注意事项和快捷键</p>
+            <p>1、绘制矩形只能用于绘制矩形</p>
+            <p>2、如需调整绘制的矩形，请调整命令按钮</p>
+            <p>3、缩放画布<strong>滚动鼠标滚轮</strong></p>
+            <p>4、移动画布<strong>(W)</strong></p>
+            <p>5、绘制矩形<strong>(A)</strong></p>
+            <p>6、调整四边形<strong>(S)</strong></p>
+            <p>7、调整矩形<strong>(D)</strong></p>
+            <p>8、删除某个四边形<strong>(Del)</strong></p>
+            <p>9、移动到上一个框<strong>(J)</strong></p>
+            <p>10、移动到下一个框<strong>(K)</strong></p>
+            <p>11、帮助<strong>(H)</strong></p>
+          </div>
+          
+        </div>
+
+        
+      </div>
+      <div class = "SubmitTaskBox">
+        <div class = "SubmitTask">
+          <input class="btn btn-default btn-sm btn-block" type="button" value="提交" id="submit_task">
+        </div>
+      </div>
+      
+    </div>
+   
+    <script type="text/javascript" src="js/svg_main.js"></script>
+   
+  </body>
+ 
+
+</html>
+
